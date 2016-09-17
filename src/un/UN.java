@@ -21,8 +21,16 @@ public class UN {
        Scanner leer = new Scanner(System.in);
         int opcion[] = new int[2];
         Usuario usuario[] = new Usuario[10];
-        String nombre, apellido,nick,clave,correo;
-        int edad,numeroUsuario = 0;
+        Grupo grupo[] = new Grupo[10];
+        Fotografia foto[]= new Fotografia[10];
+        String nombre, apellido,nick,clave,correo, descripcion,tipo,etiqueta;
+        int edad;
+        boolean menu = true;
+        
+    while(menu == true)
+    {
+            
+        
         System.out.println("RED SOCIAL POO UNAL\n");
         System.out.println("Seleccione una opcion:\n");
         System.out.println("1. Registrar Usuario");
@@ -44,10 +52,38 @@ public class UN {
                      clave = leer.next();
                      System.out.println("Ingrese correo");
                      correo = leer.next();
-                     
                      usuario[0] = new Usuario(nombre,apellido,nick,edad,clave,correo);
-                     usuario[0].getUsuario();
-    }
-    
+                     break;
+                     
+            case 2 : System.out.println("CREAR GRUPO\n");
+                     System.out.println("Ingrese nombre del grupo");
+                     nombre = leer.next();
+                     System.out.println("Ingrese Descripcion ");
+                     descripcion = leer.next();
+                     System.out.println("Que tipo de grupo es ");
+                     tipo = leer.next();
+                     grupo[0] = new Grupo(nombre,descripcion,tipo,usuario[0]);
+                     System.out.println("grupo creado");
+                     break;
+                     
+            case 3 : System.out.println("CREAR FOTOGRAFIA\n");
+                     System.out.println("Ingrese nombre");
+                     nombre = leer.next();
+                     System.out.println("Ingrese descripcion");
+                     descripcion = leer.next();
+                     System.out.println("¿Desea Etiquerar a alguien?");
+                     System.out.println("S/N");
+                     etiqueta= leer.next();
+                     if(etiqueta.equals("S") || etiqueta.equals("s"))
+                     {
+                         System.out.println("A quien desea etiquetar");
+                         
+                         
+                     }
+                     
+                    
+                     
+        }
+    }   
 }
 }

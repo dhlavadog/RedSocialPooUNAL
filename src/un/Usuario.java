@@ -31,8 +31,8 @@ public class Usuario
     
     public void getUsuario()
     {
-        System.out.println(this.nombre);
-        System.out.println(this.apellido);
+        System.out.println("Usuario: ");
+        System.out.println(this.nombre+" "+this.apellido);
         System.out.println(this.nick);
         System.out.println(this.edad);
         System.out.println(this.clave);

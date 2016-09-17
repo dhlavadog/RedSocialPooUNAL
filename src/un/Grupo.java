@@ -11,16 +11,29 @@ package un;
  */
 public class Grupo 
 {
-    private String grupo;
+    private String nombre;
     private String descripcion;
     private String tipoGrupo;
     private String noticias;
     private Usuario propietario;
     
-    Grupo(String g, String tipo, String n, Usuario p)
+    Grupo(String n,String d, String tipo, Usuario p)
     {
-        
+        this.nombre = n;
+        this.descripcion = d;
+        this.tipoGrupo = tipo;
+        this.propietario = p;
     }
+    
+    void getGrupo()
+    {
+        System.out.println("Nombre del grupo: "+this.nombre);
+        System.out.println("Descripcion: "+this.descripcion);
+        System.out.println("Tipo de grupo: "+this.tipoGrupo);
+        this.propietario.getUsuario();
+    }
+    
+    
     
     
 }
