@@ -20,39 +20,58 @@ public class UN {
    {
        Scanner leer = new Scanner(System.in);
         int opcion[] = new int[2];
+        
         Usuario usuario[] = new Usuario[10];
+        
         Grupo grupo[] = new Grupo[10];
         Fotografia foto[]= new Fotografia[10];
         String nombre, apellido,nick,clave,correo, descripcion,tipo,etiqueta;
-        int edad;
+        int edad, n = 0;
         boolean menu = true;
         
     while(menu == true)
     {
-            
+          
         
-        System.out.println("RED SOCIAL POO UNAL\n");
-        System.out.println("Seleccione una opcion:\n");
-        System.out.println("1. Registrar Usuario");
+        System.out.println("RED SOCIAL POO UNAL");
+        System.out.println("1. Usuarios");
         System.out.println("2. Crear grupo");
         System.out.println("3. Crear fotografia");
+        System.out.println("4. Salir\n");
+        System.out.println("Ingrese una de las Opciones");
         opcion[0]= leer.nextInt();
         switch(opcion[0])
         {
-            case 1 : System.out.println("REGISTRAR USUARIO\n");
-                     System.out.println("Ingrese nombre");
-                     nombre = leer.next();
-                     System.out.println("Ingrese apellido");
-                     apellido = leer.next();
-                     System.out.println("Ingrese nickname");
-                     nick = leer.next();
-                     System.out.println("Ingrese edad");
-                     edad = leer.nextInt();
-                     System.out.println("Ingrese clave");
-                     clave = leer.next();
-                     System.out.println("Ingrese correo");
-                     correo = leer.next();
-                     usuario[0] = new Usuario(nombre,apellido,nick,edad,clave,correo);
+            case 1 : System.out.println("USUARIOS");
+                     System.out.println("1. Registrar Usuario");
+                     System.out.println("2. Ver usuarios registrados");
+                     opcion[1] = leer.nextInt();
+                     switch(opcion[1])
+                     {
+                         case 1 : System.out.println("Ingrese nombre");
+                                  nombre = leer.next();
+                                  System.out.println("Ingrese apellido");
+                                  apellido = leer.next();
+                                  System.out.println("Ingrese nickname");
+                                  nick = leer.next();
+                                  System.out.println("Ingrese edad");
+                                  edad = leer.nextInt();
+                                  System.out.println("Ingrese clave");
+                                  clave = leer.next();
+                                  System.out.println("Ingrese correo");
+                                  correo = leer.next();
+                                  usuario[n] = new Usuario(nombre,apellido,nick,edad,clave,correo);
+                                  break;
+                         case 2 : for(int i=0; i<=n; i++)
+                                  {
+                                      usuario[i].getUsuario();
+                             
+                                  }
+                                  break;         
+                     }
+                     
+                     
+                     
                      break;
                      
             case 2 : System.out.println("CREAR GRUPO\n");
@@ -75,15 +94,27 @@ public class UN {
                      System.out.println("S/N");
                      etiqueta= leer.next();
                      if(etiqueta.equals("S") || etiqueta.equals("s"))
-                     {
+                        {
                          System.out.println("A quien desea etiquetar");
-                         
-                         
-                     }
+                         etiqueta = leer.next();
+                        }
+                     System.out.println("Ingrese coordenadas");
+                     int a= leer.nextInt();
+                     int b = leer.nextInt();
                      
+                     foto[0] = new Fotografia(nombre, descripcion, a, b);
+                     break;
+            case 4 : menu = false;
+                     break;
+                    
                     
                      
         }
-    }   
+        
+        
+        
+     n++;   
+    }
+       System.out.println("Se ha cerrado sesion con exito");
 }
 }
