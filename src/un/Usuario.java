@@ -19,6 +19,17 @@ public class Usuario
     private String correo;
     
     
+    Usuario()
+    {
+        this.nombre = "";
+        this.apellido = "";
+        this.nick = "";
+        this.edad = 0;
+        this.clave = "";
+        this.correo = "";   
+    }
+    
+    
     Usuario(String n, String a, String nick, int e, String c, String correo )
     {
         this.nombre = n;
@@ -42,6 +53,11 @@ public class Usuario
     public String getNombre()
     {
         return this.nombre;
+    }
+    
+    public String getApellido()
+    {
+        return this.apellido;
     }
     
 }

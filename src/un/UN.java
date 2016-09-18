@@ -22,8 +22,9 @@ public class UN {
         int opcion[] = new int[2];
         
         Usuario usuario[] = new Usuario[10];
-        
+        for(int i = 0; i<10; i++) usuario[i] = new Usuario();
         Grupo grupo[] = new Grupo[10];
+        
         Fotografia foto[]= new Fotografia[10];
         String nombre, apellido,nick,clave,correo, descripcion,tipo,etiqueta;
         int edad, n = 0;
@@ -62,9 +63,10 @@ public class UN {
                                   correo = leer.next();
                                   usuario[n] = new Usuario(nombre,apellido,nick,edad,clave,correo);
                                   break;
-                         case 2 : for(int i=0; i<=n; i++)
+                         case 2 : System.out.println("USUARIOS REGISTRADOS");
+                                  for(int i=0; i<=n; i++)
                                   {
-                                      usuario[i].getUsuario();
+                                      System.out.println(usuario[i].getNombre()+" "+usuario[i].getApellido());
                              
                                   }
                                   break;         
